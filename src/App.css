@@ -173,20 +173,32 @@ img{
 }
 
 @media only screen and (max-width: 750px){
+  h1{
+    font-size: 38px;
+  }
+  h3{
+    font-size: 18px;
+  }
+  .link{
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+  .description{
+    width: auto;
+    padding-bottom: 8px;
+  }
+}
+
+@media only screen and (max-width: 550px){
   .addBtn{
     width: 80%;
   }
   .div{
     text-align: center;
   }
-  h1{
-    font-size: 30px;
-  }
-  h3{
-    font-size: 14px;
-  }
   nav{
     flex-direction: column;
+    text-align: center;
   }
   .link{
     font-size: 14px;
@@ -198,20 +210,43 @@ img{
     font-size: 12px;
   }
   .btnPrice{
-    padding: 6px;
+    padding: 3px;
     margin: 10px;
     margin-top: 15px;
     width: 120px;
   }
-}
-  @media only screen and (max-width: 450px){
   .chooseCategoryDiv{
-    margin-top: 20px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .btnCateg{
+    text-align: center;
+    background-color: rgb(1, 31, 12);
+    color: #fff;
+    border: none;
+  }
+}
+  @media only screen and (max-width: 400px){
+  .chooseCategoryDiv{
+    margin-top: 10px;
+  }
+  .btnCateg{
+    text-align: center;
+    width: 70%;
+    background-color: rgb(1, 31, 12);
+    color: #fff;
+    border: none;
   }
   .itemsDiv{
     flex: 1;
     margin-left: 5px;
    }
+   h1{
+    font-size: 30px;
+  }
+  h3{
+    font-size: 14px;
+  }
    .div{
     margin: 5px;
     padding: 10px;
@@ -222,9 +257,5 @@ img{
   img{
     width: 180px;
     height: 180px;
-  }
-  .description{
-    width: 200px;
-    margin: auto;
   }
 }
