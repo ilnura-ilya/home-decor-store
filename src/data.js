@@ -23,7 +23,8 @@ export const data = [
       description: "Solid brass is cast into a modern curved shape to support a taper candle on each end. Made of unlacquered brass, candle holder will patina beautifully over time. CB2 exclusive.",
       image: image,
       searchTerm: "under50",
-      searchItem: "candle"
+      searchItem: "candle",
+      showMore: false
    },
    {
       id: 2,
@@ -32,7 +33,8 @@ export const data = [
       description: "Hammered high/low texture reminiscent of snakeskin brings an edgy sensibility to metallic taper candle holder. Add the coordinating tea light holders for even more of a statement. CB2 exclusive.",
       image: imageTwo,
       searchTerm: "above60",
-      searchItem: "candle"
+      searchItem: "candle",
+      showMore: false
    },
    {
       id: 3,
@@ -41,7 +43,8 @@ export const data = [
       description: " A modern angle on a retro classic, this multifaceted glass form illuminates the moody glow of misty grey in every direction. Candle sold separately. betty smoke tea light candle holders set of six is a CB2 exclusive.",
       image: imageThree,
       searchTerm: "above60",
-      searchItem: "candle"
+      searchItem: "candle",
+      showMore: false
    },
    {
       id: 4,
@@ -50,7 +53,8 @@ export const data = [
       description: "Hammered high/low texture reminiscent of snakeskin brings an edgy sensibility to metallic taper candle holder. Add the coordinating tea light holders for even more of a statement. CB2 exclusive.",
       image: imageFour,
       searchTerm: "50to60",
-      searchItem: "candle"
+      searchItem: "candle",
+      showMore: false
    },
    {
       id: 5,
@@ -59,7 +63,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageVase,
       searchTerm: "under50",
-      searchItem: "vase"
+      searchItem: "vase",
+      showMore: false
    },
    {
       id: 6,
@@ -68,7 +73,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageTwoVase,
       searchTerm: "under50",
-      searchItem: "vase"
+      searchItem: "vase",
+      showMore: false
    },
    {
       id: 7,
@@ -77,7 +83,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageThreeVase,
       searchTerm: "above60",
-      searchItem: "vase"
+      searchItem: "vase",
+      showMore: false
    },
    {
       id: 8,
@@ -86,7 +93,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageFourVase,
       searchTerm: "50to60",
-      searchItem: "vase"
+      searchItem: "vase",
+      showMore: false
    },
    {
       id: 9,
@@ -95,7 +103,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageP,
       searchTerm: "above60",
-      searchItem: "pillow"
+      searchItem: "pillow",
+      showMore: false
    },
    {
       id: 10,
@@ -104,7 +113,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageTwoP,
       searchTerm: "under50",
-      searchItem: "pillow"
+      searchItem: "pillow",
+      showMore: false
    },
    {
       id: 11,
@@ -113,7 +123,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageThreeP,
       searchTerm: "50to60",
-      searchItem: "pillow"
+      searchItem: "pillow",
+      showMore: false
    },
    {
       id: 12,
@@ -122,7 +133,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageBot,
       searchTerm: "under50",
-      searchItem: "botanic"
+      searchItem: "botanic",
+      showMore: false
    },
    {
       id: 13,
@@ -131,7 +143,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageTwoBot,
       searchTerm: "under50",
-      searchItem: "botanic"
+      searchItem: "botanic",
+      showMore: false
    },
    {
       id: 14,
@@ -140,7 +153,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageThreeBot,
       searchTerm: "above60",
-      searchItem: "botanic"
+      searchItem: "botanic",
+      showMore: false
    },
    {
       id: 15,
@@ -149,7 +163,8 @@ export const data = [
       description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
       image: imageFourBot,
       searchTerm: "50to60",
-      searchItem: "botanic"
+      searchItem: "botanic",
+      showMore: false
    }
 
 ]

@@ -1,22 +1,14 @@
-function Item ({itemData, setItem}){
+function Item ({itemData, setItem, showMore, setShowMore}){
 
   const removeItem = (id) => {
       let cart = itemData.filter(item => item.id !== id)
       setItem(cart);
     }
 
-    const setShowMore = (id) => {
-      const newItems = [];
-      itemData.forEach(item => {
-          if (item.id === id) {
-              const itemNewArray = {...item, showMore: !item.showMore};
-              newItems.push(itemNewArray);
-          } else {
-            newItems.push(item);
-          }
-      });
-      setItem(newItems); 
-  } 
+  const handleShowMore = (item) => {
+    item.showMore = !item.showMore
+    setShowMore(!showMore)
+  }
 
    return(
       <div className='section'>
@@ -30,7 +22,7 @@ function Item ({itemData, setItem}){
            <img src={image} alt="candle"/>
            <h4>{price}</h4>
            <p className="description">{showMore ? description : description.substring(0, 40)}
-           <button className="moreBtn" onClick={() => setShowMore(id)}>{showMore ? " less" : " more"}</button>
+           <button className="moreBtn" onClick={() => handleShowMore(item)}>{showMore ? " less" : " more"}</button>
            </p>
            <button className='btn' onClick={() => removeItem(id)}>ADD</button>
          </div>

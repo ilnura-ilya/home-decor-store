@@ -171,6 +171,70 @@ img{
   width: 250px;
   height: 250px;
 }
+.coupon-div{
+  position: relative;
+  margin: 35px 0;
+}
+.coupon-image{
+  width: 100%;
+  height: auto;
+}
+.coupon-title{
+  font-family: 'Felipa', cursive;
+  font-size: 36px;
+  color: #fff;
+  position: absolute;
+  width: 25%;
+  text-align: center;
+  top: 22%;
+  right: 10%;
+  z-index: 99;
+
+}
+.coupon-btn{
+  position: absolute;
+  bottom: 22%;
+  right: 15%;
+  background-color: #fff;
+  border: none;
+  font-family: 'Prompt', sans-serif;
+  font-size: 18px;
+  color: #000;
+  padding: 10px;
+  font-weight: 500;
+  width: 200px;
+  cursor: pointer;
+}
+.footer{
+  background: #000;
+ 
+}
+.email-footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 500px;
+}
+h5{
+  color: #fff;
+  font-family: 'Prompt', sans-serif;
+  font-weight: 200;
+  padding-top: 40px;
+}
+.input-footer{
+  background: #000;
+  border: none;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+}
+
+.footer-link{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
 @media only screen and (max-width: 750px){
   h1{

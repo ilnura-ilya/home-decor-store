@@ -3,10 +3,13 @@ import { data } from './data';
 import Items from './Items';
 import Buttons from './Buttons';
 import Category from './Category';
+import Coupon from './Coupon'
+import Footer from './Footer';
 
 
 function Home () {
     const [item, setItem] = useState(data);
+    const [showMore, setShowMore] = useState(false);
 
      const chosenPriceCategory = (searchTerm) => {
          const newItems = data.filter(element => element.searchTerm === searchTerm
@@ -29,11 +32,13 @@ function Home () {
           <Category chosenItemCategory = {chosenItemCategory}/>  
          </div>
          <div className='itemsDiv'>
-          <Items itemData = {item} setItem = {setItem} />   
+          <Items itemData = {item} setItem = {setItem} showMore = {showMore} setShowMore = {setShowMore} />   
          </div>
           
         </div>
         
+        <Coupon />
+        <Footer />
        
      
         
