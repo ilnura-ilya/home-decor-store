@@ -11,13 +11,14 @@ return(
         <div id= "cart" className="cart">
           <h4>My Shopping Cart</h4>
           {cart.map( item => {
-       const {id, name, price, } = item;
+       const {id, name, price, newPrice} = item;
        return(
          
          <ul key={id} className='item-to-buy'>
              <li className='item-name'>
                 <span>{name},</span>
-                <span>{price} {newPrice}</span>
+                <span>{price} </span>
+                <span className="newPrice">{newPrice}</span>
             </li>
             <button className='item-btn' onClick = {()=> deleteItem(id)}>X</button>
          </ul>
