@@ -17,7 +17,7 @@ return(
          <ul key={id} className='item-to-buy'>
              <li className='item-name'>
                 <span>{name},</span>
-                <span>{price}</span>
+                <span>{price} {newPrice}</span>
             </li>
             <button className='item-btn' onClick = {()=> deleteItem(id)}>X</button>
          </ul>
