@@ -89,6 +89,7 @@ p{
   font-weight: 500;
   width: 170px;
 }
+
 .btnCateg{
   font-family: 'Prompt', sans-serif;
   font-size: 16px;
@@ -126,23 +127,42 @@ p{
   font-family: 'Prompt', sans-serif;
   font-size: 16px;
 }
-
-.btnPrice{
+.checkPrice{
   display: flex;
+}
+
+.btnPrice {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.filter{
+ text-align: center;
   padding: 10px;
   margin: 10px;
   margin-top: 30px;
-  width: 120px;
+  width: auto;
   justify-content: center;
   font-family: 'Prompt', sans-serif;
   background-color: rgb(250, 253, 251);
   color: rgb(1, 31, 12);
   border: 2px solid rgb(1, 31, 12);
+  cursor: pointer;
 }
-.btnPrice:focus{
-  background-color: rgba(186, 190, 188, 0.4);
-  border: 2px solid rgb(127, 128, 127);
+
+.checked{
+  background-color: rgba(186, 190, 188, 0.5);
+  border: 2px solid rgb(92, 92, 92);
+  cursor: pointer;
 }
+.checked input{
+  width: 220px;
+  position: absolute;
+  opacity: 0;
+  height: auto;
+}
+
+
 nav{
   display: flex;
   justify-content: center;

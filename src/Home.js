@@ -11,7 +11,7 @@ function Home () {
     const [item, setItem] = useState(data);
     const [showMore, setShowMore] = useState(false);
     const [cart, setCart] = useState([]);
-
+   
     const addToCart = (id) => {
       const cartUsers = document.getElementById('cart');
        cartUsers.style.display = "block";
@@ -25,8 +25,7 @@ function Home () {
           userCart.push (itemToBuy);
          }
         })
-    
-       setCart(userCart);
+         setCart(userCart);
        }
      }
    
@@ -35,21 +34,26 @@ function Home () {
        setCart(newCart);
      }
 
-     const chosenPriceCategory = (searchTerm) => {
-         const newItems = data.filter(element => element.searchTerm.includes(searchTerm)
-         );
-         setItem(newItems);
+     const chosenPriceCategory = () => {
+       const filterBtn = [...document.querySelectorAll('.btnPrice')].filter(input => input.checked).map(input => input.value);
+       const newItems = data.filter(({searchTerm}) => filterBtn.includes(searchTerm))
+       setItem(newItems)
       }
-    
+     
      const chosenItemCategory = (searchItem ) => {
         const newItems = data.filter(element => element.searchItem === searchItem);
         setItem(newItems);
       }
+
+      const clickLabel = (e) => {
+        const checked = e.target;
+        checked.classList.toggle('checked');
+        }
       
       return (
         <div className="App">
        
-        <Buttons filteredItems = {chosenPriceCategory} />
+        <Buttons filteredItems = {chosenPriceCategory} handleToggle={clickLabel}  />
         <div className='itemsSection'>
          <div className='chooseCategoryDiv'>
           <Category chosenItemCategory = {chosenItemCategory} />  
@@ -70,5 +74,6 @@ function Home () {
       );
    
 }
+
 
 export default Home;
