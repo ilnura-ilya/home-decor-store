@@ -1,6 +1,6 @@
 function Buttons ({filteredItems, handleToggle}){
    return (
-      <div className="container">
+      <div  className='priceCategDiv'>
          <div className="checkPrice">
       <label onClick={(e) => handleToggle(e)} htmlFor="above60" className="filter">Above $60</label>
          <input type="checkbox" name="types" className="btnPrice" value= "above60" id="above60" onClick = {() => filteredItems()}/>

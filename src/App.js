@@ -8,10 +8,17 @@ import Sale from "./Sale";
 import Footer from "./Footer";
 import { HiOutlineShoppingBag } from "react-icons/hi";
 import { BsPerson } from "react-icons/bs";
+import { BiMenuAltLeft } from "react-icons/bi";
+import { IoIosClose } from "react-icons/io";
+import React, { useState } from 'react';
 
 
 
 function App (){
+
+  const [responsive, setResponsive] = useState(false);
+
+ 
 
   const showCart= ()=> {
     const cartUsers = document.getElementById('cart');
@@ -31,11 +38,16 @@ function App (){
        </div>
      
           <nav>
+            <div className="hamburgerDiv" onClick={() => setResponsive(!responsive)}>{responsive ? <IoIosClose  className="hamburger"/> : <BiMenuAltLeft className="hamburger"/>}</div>
+            <div className= {responsive ? "navigationMenu expanded" : "navigationMenu"}>
+              <ul>
              <Link to = "/" className='link'>Shop</Link>
              <Link to = "/aboutUs" className='link'>About</Link>
              <Link to = "/advice" className='link'>Advice</Link>
              <Link to = "/sale" className='link red'>Sale</Link>
              <Link to = "/contactUs" className='link'>Contact Us</Link>
+             </ul>
+            </div> 
              <div className=' symbol'>
               <div className='symbol-link '><BsPerson/></div>
               <div className="symbol-link two cart" onClick={()=>{showCart()}} >< HiOutlineShoppingBag/></div>

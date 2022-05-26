@@ -52,8 +52,10 @@ function Home () {
       
       return (
         <div className="App">
-       
-        <Buttons filteredItems = {chosenPriceCategory} handleToggle={clickLabel}  />
+       <div>
+         <Buttons filteredItems = {chosenPriceCategory} handleToggle={clickLabel}  />
+       </div>
+        
         <div className='itemsSection'>
          <div className='chooseCategoryDiv'>
           <Category chosenItemCategory = {chosenItemCategory} />  
