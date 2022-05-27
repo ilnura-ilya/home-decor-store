@@ -13,12 +13,13 @@ import { IoIosClose } from "react-icons/io";
 import React, { useState } from 'react';
 
 
-
 function App (){
 
-  const [responsive, setResponsive] = useState(false);
+const [responsive, setResponsive] = useState(false);
 
- 
+  const toggleMenu = () => {
+    setResponsive(!responsive);
+  }
 
   const showCart= ()=> {
     const cartUsers = document.getElementById('cart');
@@ -38,8 +39,8 @@ function App (){
        </div>
      
           <nav>
-            <div className="hamburgerDiv" onClick={() => setResponsive(!responsive)}>{responsive ? <IoIosClose  className="hamburger"/> : <BiMenuAltLeft className="hamburger"/>}</div>
-            <div className= {responsive ? "navigationMenu expanded" : "navigationMenu"}>
+            <div className="hamburgerDiv" onClick={toggleMenu} >{responsive ? <IoIosClose  className="hamburger"/> : <BiMenuAltLeft className="hamburger"/>}</div>
+            <div className= {responsive ? "navigationMenu expanded" : "navigationMenu"} onClick = {toggleMenu}>
               <ul>
              <Link to = "/" className='link'>Shop</Link>
              <Link to = "/aboutUs" className='link'>About</Link>
