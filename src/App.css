@@ -13,6 +13,7 @@ body.overflow-hidden {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-evenly;
 }
 h1{
   color: #fff;
@@ -26,27 +27,29 @@ h3{
   font-weight: 200;
   font-size: 26px;
   text-align: center;
-  padding-bottom: 30px;
+  padding: 15px;
   margin-top: 0;
 }
 
-.container{
+.searchDiv{
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  margin-top: 20px;
 }
-.div{
-  margin: 10px;
-  padding: 20px;
-  flex: 1;
+.searchDiv input {
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  width: 50%;
 }
-.itemsSection{
+.categorySection{
   display: flex;
   flex-wrap: wrap;
+  padding: 20px;
+  padding-top: 0;
 }
 .chooseCategoryDiv{
-  margin-top: 50px;
+  margin-top: 20px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -55,11 +58,16 @@ h3{
 }
 .itemsDiv{
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
  position: relative;
- flex: 5;
- margin-left: 20px;
+ flex: 6;
 }
+
+.saleDiv{
+  margin: 30px;
+}
+
 h2{
   font-family: 'Prompt', sans-serif;
   font-size: 28px;
@@ -88,7 +96,7 @@ p{
   margin-bottom: 15px;
 }
 
-.btn, .submit{
+.btn{
   background-color: rgb(1, 31, 12);
   color: #fff;
   border: none;
@@ -96,6 +104,19 @@ p{
   font-family: 'Prompt', sans-serif;
   font-weight: 500;
   width: 170px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: rgb(171, 9, 9);
+}
+
+select{
+  font-family: 'Prompt', sans-serif;
+  text-transform: uppercase;
+  padding: 5px;
+  width: 169px;
+  margin: 10px 1px;
 }
 
 .btnCateg{
@@ -103,11 +124,12 @@ p{
   font-size: 16px;
   font-weight: 500;
   width: 170px;
-  margin: 10px 20px;
+  margin: 10px 30px;
+  margin-left: 0;
   background-color: #fff;
   border: none;
   cursor: pointer;
-  text-align: left;
+  text-align: center;
   border: 1px solid #000;
   padding: 5px;
 }
@@ -116,17 +138,6 @@ p{
   color: #fff;
   border: none;
   padding: 5px;
-}
-.addBtn{
-  background-color: rgb(250, 253, 251);
-  color: rgb(1, 31, 12);
-  border: 1px solid rgb(1, 31, 12);
-  padding: 5px;
-  font-family: 'Prompt', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  width: 120px;
-  margin: 20px;
 }
 
 .moreBtn{
@@ -138,46 +149,21 @@ p{
 }
 .priceCategDiv{
   display: flex;
- 
-  justify-content: center;
+  justify-content:flex-end;
   align-items: center;
+  margin: 20px 65px 0;
 }
-.checkPrice{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.btnPrice {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-.filter{
- text-align: center;
-  padding: 10px;
-  margin: 10px;
-  margin-top: 30px;
-  width: 150px;
-  justify-content: center;
+.priceCategDiv button{
+  margin: 0 10px;
+  background-color: #000;
+  color: #fff;
+  padding: 3px 7px;
+  border-radius: 5px;
   font-family: 'Prompt', sans-serif;
-  background-color: rgb(250, 253, 251);
-  color: rgb(1, 31, 12);
-  border: 2px solid rgb(1, 31, 12);
-  cursor: pointer;
+  border: none;
 }
-
-.checked{
-  background-color: rgba(186, 190, 188, 0.5);
-  border: 2px solid rgb(92, 92, 92);
-  cursor: pointer;
-}
-.checked input{
-  width: 220px;
-  position: absolute;
-  opacity: 0;
-  height: auto;
+.priceCategDiv button:hover{
+  background-color: rgb(171, 9, 9);
 }
 
 
@@ -188,6 +174,7 @@ nav{
   align-items: center;
   padding: 10px;
   border-bottom: 2px solid black;
+  height: 50px;
 }
 .hamburger{
   height: 30px;
@@ -214,6 +201,7 @@ nav{
 .symbol-link{
   padding: 10px 5px;
   font-size: 22px;
+  cursor: pointer;
 }
 .red{
   color: rgb(216, 58, 58);
@@ -224,7 +212,7 @@ nav{
   margin-bottom: 50px;
 }
 .advice-image{
-  width: 350px;
+  width: 550px;
   height: auto;
 }
 form{
@@ -238,9 +226,7 @@ form{
   margin: 20px 0;
   width: 40%;
 }
-.submit{
-  font-size: 18px;
-}
+
 .contactUs{
   margin-left: 40px;
   margin-bottom: 50px;
@@ -304,6 +290,7 @@ h5{
 }
 .input-footer{
   background: #000;
+  font-family: 'Prompt', sans-serif;
   border: none;
   border-bottom: 1px solid #fff;
   width: 100%;
@@ -314,7 +301,13 @@ h5{
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-
+.copyRight{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: 'Prompt', sans-serif;
+  color: #fff;
+}
 .icon{
   color: #fff;
   font-size: 30px;
@@ -373,39 +366,82 @@ h5{
   height: auto;
   margin: 20px 0;
 }
-.cart{
+.cartDiv{
+  background-color: rgb(255, 255, 255);
+  border: 10px solid rgba(0, 0, 0, 0.1);
+  width: 600px;
+  height: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  z-index: 99;
+}
+.close{
+  display: none;
+}
+.open {
   display: block;
 }
-#cart{
-  text-align: right;
-  display: none;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid #000;
-  width: 350px;
-  height: auto;
-  padding: 50px;
-  position: absolute;
-  top: -100px;
-  right: 0;
+.cart{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.added{
-  color: blue;
+.closeCart{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 25px;
 }
 .item-to-buy{
   font-family: 'Prompt', sans-serif;
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: flex-start;
+  align-items: center;
   list-style: none;
+  width: 85%;
+ 
+}
+.item-name{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
 }
 
 .item-btn{
-  width: 20px;
-  height: 20px;
-  margin-left: 20px;
-  margin-right: 0;
+  padding: 0 10px;
+  font-size: 18px;
   background-color: none;
   border: none;
+  cursor: pointer;
+}
+.cartTotal{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 90%;
+  margin-bottom: 20px;
+  border-top: 1px solid black;
+}
+.addBtn{
+  background-color: rgb(250, 253, 251);
+  color: rgb(1, 31, 12);
+  border: 1px solid rgb(1, 31, 12);
+  padding: 3px;
+  font-family: 'Prompt', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  width: 120px;
+  margin: 20px 0;
 }
 
 @media only screen and (max-width: 1200px){
@@ -433,22 +469,16 @@ h5{
     font-size: 16.5px;
     padding: 10px 30px;
   }
-  .div{
-    margin: 10px;
-    padding: 10px;
-  }
   img{
     width: 230px;
     height: 230px;
   }
   .description{
-    width: auto;
     padding-bottom: 8px;
   }
 .btnCateg{
   font-size: 15px;
-  width: 135px;
-  margin: 10px;
+  width: 170px;
   padding: 5px;
 }
   .coupon-image{
@@ -491,15 +521,16 @@ h5{
   .navigationMenu ul{
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     position: absolute;
    background-color: #fff;
     top: 0;
     left: 0;
-    width: 90%;
+    width: 95%;
     max-width: 100%;
     height: 70vh;
     z-index: 1;
+    padding-top: 15px;
   }
 
   .navigationMenu {
@@ -520,16 +551,8 @@ h5{
     position: absolute;
     right: 10px;
     z-index: 10;
-    
   }
 
- .filter{
-   font-size: 14px;
-   width: 90px;
- }
- .checked input{
-   width: 120px;
- }
   .email-footer{
     width: 500px;
   }
@@ -555,21 +578,41 @@ h5{
   h5{
     padding-top: 10px;
   }
+  .cartDiv{
+    width: 500px;
+  }
 }
 
 @media only screen and (max-width: 550px){
-  
-  .div{
+.heading{
+  height: 20vh;
+}
+h1{
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+h3{
+  font-size: 16px;
+  padding: 10px;
+}
+  .itemSection{
     text-align: center;
   }
+  .categorySection{
+flex-direction: column;
+  }
+
   nav{
     flex-direction: row;
     text-align: center;
     flex-wrap: wrap;
   }
-  
+  .itemsDiv{
+    justify-content: center;
+    align-items: center;
+  }
   .link{
-    font-size: 14px;
+    font-size: 15px;
   }
   .advice{
     padding: 10px 15px;
@@ -577,31 +620,24 @@ h5{
   p{
     font-size: 12px;
   }
-  .btnPrice{
-    padding: 3px;
-    margin: 5px;
-    margin-top: 15px;
-  }
-  .filter{
-    padding: 3px;
-    margin: 5px;
-    margin-top: 20px;
-    border: 1px solid rgb(1, 31, 12);
-    font-size: 11px;
-    width: 80px;
-  }
-  .itemsSection{
-    display: flex;
-    flex-direction: column;
-  }
-  .chooseCategoryDiv{
+ 
+ .chooseCategoryDiv{
     flex-direction: row;
     justify-content: center;
     text-align: center;
     margin-top: 0;
   }
+  
+  .priceCategDiv{
+    justify-content:center;
+  }
+  select{
+    text-transform: lowercase;
+    padding: 2px;
+    width: 140px;
+    margin: 10px;
+  }
   .btnCateg{
-    text-align: center;
     width: 100px;
     margin: 5px;
     padding: 3px;
@@ -654,46 +690,29 @@ h5{
   }
   .advice-image{
     width: 300px;
-    height: auto;
   }
-  #cart{
-    width: 100%;
-    height: auto;
-    padding: 30px;
-    position: fixed;
-    top: -20px;
-    right: 0;
+  .cartDiv{
+    width: 80%;
   }
+
 }
   @media only screen and (max-width: 400px){
   .chooseCategoryDiv{
     margin-top: 10px;
   }
- 
-  .itemsDiv{
-    flex: 1;
-    margin-left: 5px;
-   }
    h1{
     font-size: 30px;
   }
   h3{
     font-size: 14px;
   }
-   .div{
-    margin: 5px;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+ 
   img{
     width: 180px;
     height: 180px;
   }
   .advice-image{
     width: 200px;
-    height: auto;
   }
   .team-image{
      width: 250px;
@@ -722,5 +741,8 @@ h5{
     bottom: 40px;
     height: 18px;
     padding: 6px;
+ }
+ .cartDiv{
+  width: 90%;
  }
 }

@@ -1,76 +1,137 @@
-import { BrowserRouter as Router,   Routes,   Route,   Link } from "react-router-dom";
 import './App.css';
-import Home from './Home';
-import AboutUs from './AboutUs';
-import Advice from './Advice';
-import ContactUs from './ContactUs';
-import Sale from "./Sale";
-import Footer from "./Footer";
-import { HiOutlineShoppingBag } from "react-icons/hi";
-import { BsPerson } from "react-icons/bs";
-import { BiMenuAltLeft } from "react-icons/bi";
-import { IoIosClose } from "react-icons/io";
+import Footer from './Components/Footer';
+import Navigation from './Components/Navigation';
 import React, { useState } from 'react';
+import { data } from './data/data';
 
+function App() {
+  const [itemData, setItemData] = useState(data);
+  const [itemsDataFilter] = useState(data);
+  const [showMore, setShowMore] = useState(false);
+  const [cart, setCart] = useState([]);
+  const [searchText, setSearchText] = useState('');
+  const [cartActive, setCartActive] = useState(false);
+  const excludeColumns = ['id'];
 
-function App (){
+  const showCart = () => {
+    setCartActive(!cartActive);
+  };
 
-const [responsive, setResponsive] = useState(false);
+  const handleSearch = (value) => {
+    setSearchText(value);
+    filterData(value);
+  };
 
-  const toggleMenu = () => {
-    setResponsive(!responsive);
-  }
-
-  const showCart= ()=> {
-    const cartUsers = document.getElementById('cart');
-    if (cartUsers.style.display === "none") {
-      cartUsers.style.display = "block";
+  const filterData = (value) => {
+    const lowerCaseValue = value.toLowerCase().trim();
+    if (!lowerCaseValue) {
+      setItemData(data);
     } else {
-      cartUsers.style.display = "none";
+      const filteredData = data.filter((item) => {
+        return Object.keys(item).some((key) => {
+          return excludeColumns.includes(key)
+            ? false
+            : item[key].toString().toLowerCase().includes(lowerCaseValue);
+        });
+      });
+      setItemData(filteredData);
     }
-   }
+  };
 
-  return(
+  const handleShowMore = (item) => {
+    item.showMore = !item.showMore;
+    setShowMore(!showMore);
+  };
+
+  const addToCart = (id) => {
+    if (!cart.find((element) => element.id === id)) {
+      let userCart = [...cart];
+
+      data.forEach((item) => {
+        if (item.id === id) {
+          const itemToBuy = { ...item };
+          userCart.push(itemToBuy);
+        }
+      });
+
+      setCart(userCart);
+      setCartActive(true);
+    }
+  };
+
+  const deleteItem = (id) => {
+    let newCart = cart.filter((item) => item.id !== id);
+    setCart(newCart);
+  };
+
+  const chosenPriceCategory = (e) => {
+    const newItemsList = [...itemsDataFilter];
+    const newItems = newItemsList.filter((element) =>
+      element.searchTerm.includes(e.target.value)
+    );
+    setItemData(newItems);
+  };
+
+  const chosenItemCategory = (searchItem) => {
+    const newItemsList = [...itemsDataFilter];
+    const newItems = newItemsList.filter(
+      (element) => element.searchItem === searchItem
+    );
+    setItemData(newItems);
+  };
+
+  const sortLowToHigh = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length - 1; j++) {
+        if (arr[j].price > arr[j + 1].price) {
+          let tmp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = tmp;
+        }
+      }
+    }
+    let temp = [...arr];
+    setItemData(temp);
+  };
+
+  const sortHighToLow = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length - 1; j++) {
+        if (arr[j].price < arr[j + 1].price) {
+          let tmp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = tmp;
+        }
+      }
+    }
+    let temp = [...arr];
+    setItemData(temp);
+  };
+
+  return (
     <div className="App">
-      <Router> 
-      <div className='heading'>
-            <h1>HOME DECOR</h1>
-            <h3>Our store offers  unique and eye-catching contemporary home accessories that you need for your home</h3>
-       </div>
-     
-          <nav>
-            <div className="hamburgerDiv" onClick={toggleMenu} >{responsive ? <IoIosClose  className="hamburger"/> : <BiMenuAltLeft className="hamburger"/>}</div>
-            <div className= {responsive ? "navigationMenu expanded" : "navigationMenu"} onClick = {toggleMenu}>
-              <ul>
-             <Link to = "/" className='link'>Shop</Link>
-             <Link to = "/aboutUs" className='link'>About</Link>
-             <Link to = "/advice" className='link'>Advice</Link>
-             <Link to = "/sale" className='link red'>Sale</Link>
-             <Link to = "/contactUs" className='link'>Contact Us</Link>
-             </ul>
-            </div> 
-             <div className=' symbol'>
-              <div className='symbol-link '><BsPerson/></div>
-              <div className="symbol-link two cart" onClick={()=>{showCart()}} >< HiOutlineShoppingBag/></div>
-            
-             </div>
-             
-          </nav>
+      <Navigation
+        itemData={itemData}
+        setItemData={setItemData}
+        addToCart={addToCart}
+        deleteItem={deleteItem}
+        chosenPriceCategory={chosenPriceCategory}
+        chosenItemCategory={chosenItemCategory}
+        handleShowMore={handleShowMore}
+        searchText={searchText}
+        handleSearch={handleSearch}
+        sortHighToLow={sortHighToLow}
+        sortLowToHigh={sortLowToHigh}
+        cart={cart}
+        setCart={setCart}
+        cartActive={cartActive}
+        setCartActive={setCartActive}
+        showCart={showCart}
+      />
 
-          <Routes>
-             <Route path = "/" element={<Home/>}/>
-             <Route path = "/aboutUs" element={<AboutUs/>}/>
-             <Route path = "/advice" element={<Advice/>}/>
-             <Route path = "/sale" element={<Sale/>}/>
-             <Route path = "/contactUs" element={<ContactUs/>}/>
-          </Routes>
-          </Router>
-      
-          <Router> 
-          <Footer/>
-          </Router>
+      <Footer />
     </div>
-  )
+  );
 }
 
 export default App;
